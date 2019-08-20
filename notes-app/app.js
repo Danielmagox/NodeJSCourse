@@ -1,11 +1,5 @@
-const writer = require('fs')
-
-writer.writeFileSync('notes.txt','My name is Danichi')
-
-/*
-Challenge: Añadir un mensaje en vez de sobreescribirlo */
-
-writer.appendFileSync('notes.txt',' I live in Tenerife ', (err) => {
-    if(err) throw err;
-    console.log('Appended');
-});
+const {add,mul} = require('./utils.js')
+const cad = require('./notes.js')
+console.log(add(5,10))
+console.log(mul(5,10))
+console.log(cad());
