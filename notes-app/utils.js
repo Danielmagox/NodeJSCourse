@@ -3,12 +3,9 @@ console.log('utils.js')
 const name = 'Danichi'
 
 
-const add = function (a,b){
-return a + b;
-}
+const add = (a,b) => a+b
 
-const mul = function(a,b){
-    return a * b;
-}
+
+const mul = (a,b) => a*b
 
 module.exports = {add, mul};
