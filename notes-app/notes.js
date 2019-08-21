@@ -3,3 +3,5 @@ const getNotes = function(){
 }
 
 module.exports = getNotes;
+
+//Hasta aqui seccion 2 ************************ ////
