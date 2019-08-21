@@ -7,4 +7,4 @@ console.log(add(5,10))
 console.log(mul(5,10))
 console.log(cad());
 console.log(validator.isEmail('daniel130596@gmail.com'))
-console.log(chalk.bold.green("Success") +  chalk.red(" ! "));
+console.log(chalk.bold.inverse.blue("Success") +  chalk.red(" ! "));
