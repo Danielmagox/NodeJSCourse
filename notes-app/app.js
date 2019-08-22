@@ -6,6 +6,9 @@ const notes = require('./notes.js')
 yargs.version('1.1.0')
 
 // Create add command
+//Siguiendo el hilo de ejecucion primero lo que hacemos es pasarle al programa el 
+//titulo y el cuerpo y este se lo pasa a la funcion addNote que está en el otro fichero,
+//lo recoge de los argumentos
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
