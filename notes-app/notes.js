@@ -5,9 +5,9 @@ const getNotes = function () {
 }
 
 const addNote = function (title, body) {
-    const notes = loadNotes()
+    const notes = loadNotes()                               //note es un iterador, no un parámetro
     const duplicateNotes = notes.filter(function (note) { //la funcion es llamada por cada elemento del array (se crea dentro de filter),
-        return note.title === title                        //si el titulo de cada array es igual a el titulo pasado por argumento retornalo                                             
+        return note.title === title                        //si el titulo de cada array es igual a el titulo pasado por argumento retornalo                                            
     })
 
     if (duplicateNotes.length === 0) {  //si es 0 no ha habido duplicados
