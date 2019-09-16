@@ -1,1 +1,22 @@
-[{"title":"t","body":"b"},{"title":"titulo2","body":"cuerpo"},{"title":"titulo3","body":"cu"}]
+[
+    {
+        "title": "t",
+        "body": "b"
+    },
+    {
+        "title": "titulo2",
+        "body": "cuerpo"
+    },
+    {
+        "title": "titulo3",
+        "body": "cu"
+    },
+    {
+        "title": "Hola",
+        "body": "Quetal"
+    },
+    {
+        "title": "El mago",
+        "body": "De la montaña"
+    }
+]
