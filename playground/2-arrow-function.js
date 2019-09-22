@@ -15,7 +15,7 @@ const event = {
     guestList: ['Andrew','Jen','Mike'],
     printGuestList(){     //Las funciones si tienen acceso porque están al mismo ámbito que fueron creadas
         console.log('Guest list for ' + this.name)
-        this.guestList.forEach((guest) => {   //Las arrows function no están ligadas
+        this.guestList.forEach(guest => {   //Las arrows function no están ligadas
         console.log(guest + 'is attending ' + this.name) 
         })
     }

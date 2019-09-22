@@ -8,9 +8,10 @@ const getNotes = () => {
 const addNote = (title, body) => {
     const notes = loadNotes()                                               //note es un iterador, no un parámetro
     const duplicateNotes = notes.filter(note => note.title === title)  //la funcion es llamada por cada elemento del array (se crea dentro de filter),
-                                                                        //si el titulo de cada array es igual a el titulo pasado por argumento retornalo                                            )
+                                                                        //si el titulo de cada array es igual a el titulo pasado por argumento retornalo
+    const duplicateNote = notes.find(note => note.title === title)      //Esto es más óptimo porque se detiene cuando ve una duplicada                                                                                                            
 
-    if (duplicateNotes.length === 0) {  //si es 0 no ha habido duplicados
+    if (!duplicateNote) {  //si es 0 o undefined no ha habido duplicados
         notes.push({    //se mete al JSON parseado el title y el body en formato JSON
             title: title,
             body: body
@@ -51,10 +52,31 @@ const loadNotes = () => {
     }
 }
 
+const listNotes = () => {
+    var notes = loadNotes();
+    notes.forEach(element => {
+        console.log(element.title + " " + element.body)
+    });
+}
+
+const readNote = (title) => {
+    const notes = loadNotes()
+    const note = notes.find(note => note.title === title)
+
+    if(note){
+        console.log(chalk.inverse(note.title))
+        console.log(note.body)
+    }else{
+        console.log(chalk.red.inverse('Note not found!'))
+    }
+}
+
 //Prueba
 
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes : listNotes,
+    readNote : readNote
 }

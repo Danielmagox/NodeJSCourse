@@ -1,18 +1,1 @@
-[
-    {
-        "title": "titulo3",
-        "body": "cu"
-    },
-    {
-        "title": "El mago",
-        "body": "De la montaña"
-    },
-    {
-        "title": "t2",
-        "body": "b2"
-    },
-    {
-        "title": "Pollo",
-        "body": "pimienta"
-    }
-]
+[{"title":"El mago","body":"De la montaña"},{"title":"Pollo","body":"pimienta"},{"title":"pizza","body":"queso"},{"title":"ensalada","body":"jamon"}]
