@@ -1,15 +1,14 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const getNotes = function () {
+const getNotes = () => {
     return 'Your notes...'
 }
 
-const addNote = function (title, body) {
-    const notes = loadNotes()                               //note es un iterador, no un parámetro
-    const duplicateNotes = notes.filter(function (note) { //la funcion es llamada por cada elemento del array (se crea dentro de filter),
-        return note.title === title                        //si el titulo de cada array es igual a el titulo pasado por argumento retornalo                                            
-    })
+const addNote = (title, body) => {
+    const notes = loadNotes()                                               //note es un iterador, no un parámetro
+    const duplicateNotes = notes.filter(note => note.title === title)  //la funcion es llamada por cada elemento del array (se crea dentro de filter),
+                                                                        //si el titulo de cada array es igual a el titulo pasado por argumento retornalo                                            )
 
     if (duplicateNotes.length === 0) {  //si es 0 no ha habido duplicados
         notes.push({    //se mete al JSON parseado el title y el body en formato JSON
@@ -23,11 +22,9 @@ const addNote = function (title, body) {
     }
 }
 
-const removeNote = function(title){
+const removeNote = (title) => {
     const notes = loadNotes()
-    const notesToKeep = notes.filter(function(note){
-        return note.title !== title
-    })
+    const notesToKeep = notes.filter(note => note.title !== title)
 
     if(notes.length > notesToKeep.length){
         console.log(chalk.green('Note removed'))
@@ -39,12 +36,12 @@ const removeNote = function(title){
     saveNotes(notesToKeep)
 }
 
-const saveNotes = function (notes) {
+const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json', dataJSON)
 }
 
-const loadNotes = function () {
+const loadNotes = () => {
     try {
         const dataBuffer = fs.readFileSync('notes.json')
         const dataJSON = dataBuffer.toString()
